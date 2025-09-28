@@ -1,6 +1,6 @@
 import java.io.Console;
 
-public class TestMenuShapes {
+public class TestMenu {
     public static void main(String[] args) {
         Console keyboard = System.console();
 
