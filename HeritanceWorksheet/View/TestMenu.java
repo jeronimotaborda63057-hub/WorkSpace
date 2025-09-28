@@ -185,7 +185,6 @@ public class TestMenu {
                                             + shape.perimeter() + " cm");
                         }
                     }
-
                 }
                 case 4 -> {
                     if (shapes.getShapeList().isEmpty()) {
