@@ -19,11 +19,7 @@ public class TestMenuShapes {
         while (menu) {
             System.out.println(
                     "\n- - - - - - - - - - MENU DE FIGURAS - - - - - - - - - -\n- Ingrese una opción\n (1) Crear nueva figura\n (2) Mostrar lista de figuras\n (3) Consultar figura\n (4) Calcular área y perimetro de todas las figuras\n- Pulse otro número para salir del programa");
-            try {
-                option = Integer.parseInt(keyboard.readLine());
-            } catch (Exception e) {
-                option = 0;
-            }
+            option = Integer.parseInt(keyboard.readLine());
             switch (option) {
                 case 1 -> {
                     System.out.println(
