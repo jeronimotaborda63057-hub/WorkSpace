@@ -147,37 +147,47 @@ public class TestMenu {
                         id = keyboard.readLine(
                                 "\n- Ingrese el ID de la figura que quiere consultar: ");
                         for (Shape shape : shapes.getShapeList()) {
-                            System.out.println("\n - ID: " + shape.getId()
-                                    + "\n - Coordenadas: ("
-                                    + shape.getXcoordenate()
-                                    + "," + shape.getYcoordenate() + ")");
-                            if (shape instanceof Square) {
-                                square = (Square) shape;
-                                System.out.println(" - Lado: " + square.getSide()
-                                        + " cm");
-                            } else if (shape instanceof Rectangle) {
-                                rectangle = (Rectangle) shape;
-                                System.out.println(" - Base: " + rectangle.getBase()
-                                        + " cm\n - Altura: "
-                                        + rectangle.getHeight() + " cm");
-                            } else if (shape instanceof Circle) {
-                                circle = (Circle) shape;
-                                System.out.println(" - Radio: " + circle.getRadius()
-                                        + " cm");
-                            } else if (shape instanceof Triangle) {
-                                triangle = (Triangle) shape;
-                                System.out.println(" - Lado 1: "
-                                        + triangle.getFirstSide()
-                                        + " cm\n - Lado 2: "
-                                        + triangle.getSecondSide()
-                                        + " cm\n - Lado 3: "
-                                        + triangle.getThirdSide() + " cm");
-                            } else if (shape instanceof Oval) {
-                                oval = (Oval) shape;
-                                System.out.println(" - Eje mayor: "
-                                        + oval.getMayorAxis()
-                                        + " cm\n - Eje menor: "
-                                        + oval.getMinorAxis() + " cm");
+                            if (shape.getId().equals(id)) {
+                                System.out.println("\n- Figura encontrada...");
+                                System.out.println("\n - ID: " + shape.getId()
+                                        + "\n - Coordenadas: ("
+                                        + shape.getXcoordenate()
+                                        + "," + shape.getYcoordenate() + ")");
+                                if (shape instanceof Square) {
+                                    square = (Square) shape;
+                                    System.out.println(
+                                            " - Lado: " + square.getSide()
+                                                    + " cm");
+                                } else if (shape instanceof Rectangle) {
+                                    rectangle = (Rectangle) shape;
+                                    System.out.println(" - Base: "
+                                            + rectangle.getBase()
+                                            + " cm\n - Altura: "
+                                            + rectangle.getHeight()
+                                            + " cm");
+                                } else if (shape instanceof Circle) {
+                                    circle = (Circle) shape;
+                                    System.out.println(" - Radio: "
+                                            + circle.getRadius()
+                                            + " cm");
+                                } else if (shape instanceof Triangle) {
+                                    triangle = (Triangle) shape;
+                                    System.out.println(" - Lado 1: "
+                                            + triangle.getFirstSide()
+                                            + " cm\n - Lado 2: "
+                                            + triangle.getSecondSide()
+                                            + " cm\n - Lado 3: "
+                                            + triangle.getThirdSide()
+                                            + " cm");
+                                } else if (shape instanceof Oval) {
+                                    oval = (Oval) shape;
+                                    System.out.println(" - Eje mayor: "
+                                            + oval.getMayorAxis()
+                                            + " cm\n - Eje menor: "
+                                            + oval.getMinorAxis() + " cm");
+                                }
+                            } else {
+                                System.out.println("\n- Figura no encontada... Volviendo al menú...");
                             }
                             System.out.println(
                                     " - Área: " + shape.area()
