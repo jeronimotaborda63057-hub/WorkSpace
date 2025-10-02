@@ -27,25 +27,25 @@ public class TestMenu {
                     optionShape = Integer.parseInt(keyboard.readLine());
                     switch (optionShape) {
                         case 1 -> {
-                            id = keyboard.readLine("\n- Ingrese el ID del cuadrado:");
+                            id = keyboard.readLine("\n- Ingrese el ID del cuadrado: ");
                             x = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese la coordenada en el eje X del cuadrado:"));
+                                    "\n- Ingrese la coordenada en el eje X del cuadrado: "));
                             y = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese la coordenada en el eje Y del cuadrado:"));
+                                    "\n- Ingrese la coordenada en el eje Y del cuadrado: "));
                             firstSide = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese el lado del cuadrado (cm):"));
+                                    "\n- Ingrese el lado del cuadrado (cm): "));
                             shapes.addShape(new Square(id, x, y, firstSide));
                         }
                         case 2 -> {
-                            id = keyboard.readLine("\n- Ingrese el ID del rectángulo:");
+                            id = keyboard.readLine("\n- Ingrese el ID del rectángulo: ");
                             x = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese la coordenada en el eje X del rectángulo:"));
+                                    "\n- Ingrese la coordenada en el eje X del rectángulo: "));
                             y = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese la coordenada en el eje Y del rectángulo:"));
+                                    "\n- Ingrese la coordenada en el eje Y del rectángulo: "));
                             firstSide = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese la base del rectángulo (cm):"));
+                                    "\n- Ingrese la base del rectángulo (cm): "));
                             secondSide = Double.parseDouble(keyboard.readLine(
-                                    "\n- Ingrese la altura del rectángulo:"));
+                                    "\n- Ingrese la altura del rectángulo: "));
                             shapes.addShape(new Rectangle(id, x, y, firstSide, secondSide));
                         }
                         case 3 -> {
@@ -101,6 +101,17 @@ public class TestMenu {
                         System.out.println("\n - Error. Aún no has ingresado ninguna figura.");
                     } else {
                         for (Shape shape : shapes.getShapeList()) {
+                            if (shape instanceof Square) {
+                                System.out.println("\n- CUADRADO:");
+                            } else if (shape instanceof Triangle) {
+                                System.out.println("\n- TRIÁNGULO: ");
+                            } else if (shape instanceof Circle) {
+                                System.out.println("\n- CÍRCULO: ");
+                            } else if (shape instanceof Oval) {
+                                System.out.println("\n- ÓVALO: ");
+                            } else if (shape instanceof Rectangle) {
+                                System.out.println("\n- RECTÁNGULO: ");
+                            }
                             System.out.println("\n - ID: " + shape.getId()
                                     + "\n - Coordenadas: (" + shape.getXcoordenate()
                                     + "," + shape.getYcoordenate() + ")");
@@ -149,6 +160,17 @@ public class TestMenu {
                         for (Shape shape : shapes.getShapeList()) {
                             if (shape.getId().equals(id)) {
                                 System.out.println("\n- Figura encontrada...");
+                                if (shape instanceof Square) {
+                                    System.out.println("\n- CUADRADO:");
+                                } else if (shape instanceof Triangle) {
+                                    System.out.println("\n- TRIÁNGULO: ");
+                                } else if (shape instanceof Circle) {
+                                    System.out.println("\n- CÍRCULO: ");
+                                } else if (shape instanceof Oval) {
+                                    System.out.println("\n- ÓVALO: ");
+                                } else if (shape instanceof Rectangle) {
+                                    System.out.println("\n- RECTÁNGULO: ");
+                                }
                                 System.out.println("\n - ID: " + shape.getId()
                                         + "\n - Coordenadas: ("
                                         + shape.getXcoordenate()
