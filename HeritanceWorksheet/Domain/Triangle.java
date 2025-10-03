@@ -43,4 +43,13 @@ public class Triangle extends Rectangle {
         return thirdSide;
     }
 
+    public boolean isValide(Triangle triangle){
+        if((triangle.getFirstSide() + triangle.getSecondSide())> triangle.getThirdSide() && (triangle.getSecondSide() + triangle.getThirdSide())>triangle.getFirstSide() &&(triangle.getFirstSide() + triangle.getThirdSide())>triangle.getSecondSide()){
+            return true;
+        }
+        return false;
+    }
+
+    //a + b > c, b + c > a, c + a > b
+
 }
