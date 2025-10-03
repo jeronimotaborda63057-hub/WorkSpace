@@ -1,6 +1,15 @@
 import java.io.Console;
 
 public class TestMenu {
+
+    public static void getStats(Shape shape) {
+        System.out.println("\n - ID: " + shape.getId()
+                + "\n - Coordenadas: (" + shape.getXcoordenate()
+                + "," + shape.getYcoordenate() + ")" + "\n - Área: " + shape.area()
+                + " cm2\n - Perímetro: "
+                + shape.perimeter() + " cm");
+    }
+
     public static void main(String[] args) {
         Console keyboard = System.console();
 
@@ -167,51 +176,38 @@ public class TestMenu {
                     } else {
                         for (Shape shape : shapes.getShapeList()) {
                             if (shape instanceof Square) {
-                                System.out.println("\n- CUADRADO:");
-                            } else if (shape instanceof Triangle) {
-                                System.out.println("\n- TRIÁNGULO: ");
-                            } else if (shape instanceof Circle) {
-                                System.out.println("\n- CÍRCULO: ");
-                            } else if (shape instanceof Oval) {
-                                System.out.println("\n- ÓVALO: ");
-                            } else if (shape instanceof Rectangle) {
-                                System.out.println("\n- RECTÁNGULO: ");
-                            }
-                            System.out.println("\n - ID: " + shape.getId()
-                                    + "\n - Coordenadas: (" + shape.getXcoordenate()
-                                    + "," + shape.getYcoordenate() + ")");
-                            if (shape instanceof Square) {
                                 square = (Square) shape;
                                 System.out.println(
-                                        " - Lado: " + square.getSide() + " cm");
-                            } else if (shape instanceof Rectangle) {
-                                rectangle = (Rectangle) shape;
-                                System.out.println(" - Base: " + rectangle.getBase()
-                                        + " cm\n - Altura: "
-                                        + rectangle.getHeight() + " cm");
-                            } else if (shape instanceof Circle) {
-                                circle = (Circle) shape;
-                                System.out.println(" - Radio: " + circle.getRadius()
-                                        + " cm");
+                                        "\n- CUADRADO:\n - Lado: " + square.getSide() + " cm");
+                                getStats(shape);
                             } else if (shape instanceof Triangle) {
                                 triangle = (Triangle) shape;
-                                System.out.println(" - Lado 1: "
+                                System.out.println("\n- TRIÁNGULO\n - Lado 1: "
                                         + triangle.getFirstSide()
                                         + " cm\n - Lado 2: "
                                         + triangle.getSecondSide()
                                         + " cm\n - Lado 3: "
                                         + triangle.getThirdSide() + " cm");
+                                getStats(shape);
+                            } else if (shape instanceof Circle) {
+                                circle = (Circle) shape;
+                                System.out.println("\n CÍRCULO:\n - Radio: " + circle.getRadius()
+                                        + " cm");
+                                getStats(shape);
                             } else if (shape instanceof Oval) {
                                 oval = (Oval) shape;
-                                System.out.println(" - Eje mayor: "
+                                System.out.println("\n ÓVALO\n - Eje mayor: "
                                         + oval.getMayorAxis()
                                         + " cm\n - Eje menor: "
                                         + oval.getMinorAxis() + " cm");
+                                getStats(shape);
+                            } else if (shape instanceof Rectangle) {
+                                rectangle = (Rectangle) shape;
+                                System.out.println("\n- REACTÁNGULO:\n - Base: " + rectangle.getBase()
+                                        + " cm\n - Altura: "
+                                        + rectangle.getHeight() + " cm");
+                                getStats(shape);
                             }
-                            System.out.println(
-                                    " - Área: " + shape.area()
-                                            + " cm2\n - Perímetro: "
-                                            + shape.perimeter() + " cm");
                         }
                     }
                 }
@@ -225,61 +221,43 @@ public class TestMenu {
                         for (Shape shape : shapes.getShapeList()) {
                             if (shape.getId().equals(id)) {
                                 System.out.println("\n- Figura encontrada...");
-                                if (shape instanceof Square) {
-                                    System.out.println("\n- CUADRADO:");
-                                } else if (shape instanceof Triangle) {
-                                    System.out.println("\n- TRIÁNGULO: ");
-                                } else if (shape instanceof Circle) {
-                                    System.out.println("\n- CÍRCULO: ");
-                                } else if (shape instanceof Oval) {
-                                    System.out.println("\n- ÓVALO: ");
-                                } else if (shape instanceof Rectangle) {
-                                    System.out.println("\n- RECTÁNGULO: ");
-                                }
-                                System.out.println("\n - ID: " + shape.getId()
-                                        + "\n - Coordenadas: ("
-                                        + shape.getXcoordenate()
-                                        + "," + shape.getYcoordenate() + ")");
+
                                 if (shape instanceof Square) {
                                     square = (Square) shape;
                                     System.out.println(
-                                            " - Lado: " + square.getSide()
-                                                    + " cm");
-                                } else if (shape instanceof Rectangle) {
-                                    rectangle = (Rectangle) shape;
-                                    System.out.println(" - Base: "
-                                            + rectangle.getBase()
-                                            + " cm\n - Altura: "
-                                            + rectangle.getHeight()
-                                            + " cm");
-                                } else if (shape instanceof Circle) {
-                                    circle = (Circle) shape;
-                                    System.out.println(" - Radio: "
-                                            + circle.getRadius()
-                                            + " cm");
+                                            "\n- CUADRADO:\n - Lado: " + square.getSide() + " cm");
+                                    getStats(shape);
                                 } else if (shape instanceof Triangle) {
                                     triangle = (Triangle) shape;
-                                    System.out.println(" - Lado 1: "
+                                    System.out.println("\n- TRIÁNGULO\n - Lado 1: "
                                             + triangle.getFirstSide()
                                             + " cm\n - Lado 2: "
                                             + triangle.getSecondSide()
                                             + " cm\n - Lado 3: "
-                                            + triangle.getThirdSide()
+                                            + triangle.getThirdSide() + " cm");
+                                    getStats(shape);
+                                } else if (shape instanceof Circle) {
+                                    circle = (Circle) shape;
+                                    System.out.println("\n CÍRCULO:\n - Radio: " + circle.getRadius()
                                             + " cm");
+                                    getStats(shape);
                                 } else if (shape instanceof Oval) {
                                     oval = (Oval) shape;
-                                    System.out.println(" - Eje mayor: "
+                                    System.out.println("\n ÓVALO\n - Eje mayor: "
                                             + oval.getMayorAxis()
                                             + " cm\n - Eje menor: "
                                             + oval.getMinorAxis() + " cm");
+                                    getStats(shape);
+                                } else if (shape instanceof Rectangle) {
+                                    rectangle = (Rectangle) shape;
+                                    System.out.println("\n- REACTÁNGULO:\n - Base: " + rectangle.getBase()
+                                            + " cm\n - Altura: "
+                                            + rectangle.getHeight() + " cm");
+                                    getStats(shape);
                                 }
                             } else {
                                 System.out.println("\n- Figura no encontada... Volviendo al menú...");
                             }
-                            System.out.println(
-                                    " - Área: " + shape.area()
-                                            + " cm2\n - Perímetro: "
-                                            + shape.perimeter() + " cm");
                         }
                     }
                 }
